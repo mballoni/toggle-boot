@@ -1,11 +1,10 @@
 plugins {
-//	id 'org.springframework.boot' version '2.1.4.RELEASE'
 	id 'java'
+	id "io.spring.dependency-management" version "1.0.7.RELEASE"
 }
 
 apply plugin: "maven"
 apply plugin: 'maven-publish'
-//apply plugin: 'io.spring.dependency-management'
 
 group = 'com.marceloballoni'
 version = '0.0.1-SNAPSHOT'
@@ -22,15 +21,27 @@ repositories {
 	mavenLocal()
 }
 
+ext {
+	set('springBootVersion', '2.1.4.RELEASE')
+}
+
+
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter:2.1.4.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	compileOnly 'org.springframework.boot:spring-boot-starter-jdbc'
 
-	compileOnly 'org.springframework.boot:spring-boot-starter-jdbc:2.1.4.RELEASE'
+	annotationProcessor "org.springframework.boot:spring-boot-autoconfigure-processor"
 
-	compileOnly 'org.projectlombok:lombok:1.18.6'
-	testCompileOnly 'org.projectlombok:lombok:1.18.6'
-	annotationProcessor 'org.projectlombok:lombok:1.18.6'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.6'
+	compileOnly 'org.projectlombok:lombok'
+	testCompileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.1.4.RELEASE'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+	}
 }
