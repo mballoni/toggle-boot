@@ -14,7 +14,7 @@ public class JDBCFetcher implements Fetcher {
 
     private final JdbcTemplate jdbcTemplate;
 
-    @Value("${toggle-boot.fetcher.jdbc.query:SELECT name, active FROM TOGGLES}")
+    @Value("${toggle-boot.fetcher.jdbc.query:SELECT toggle_name, active FROM toggles}")
     private String toggleQuery;
 
     public JDBCFetcher(DataSource dataSource) {
@@ -26,7 +26,7 @@ public class JDBCFetcher implements Fetcher {
         log.info("Fetching all togles");
 
         return jdbcTemplate.query(toggleQuery, (rs, rowNum) -> new Toggle(
-                rs.getString("name"),
+                rs.getString("toggle_name"),
                 rs.getBoolean("active")
         ));
     }
