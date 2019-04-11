@@ -18,10 +18,11 @@ import javax.sql.DataSource;
 public class ToggleSyncAutoConfiguration {
 
     @Configuration
-    @ConditionalOnProperty(prefix = "toggle.fetcher", name = "type", havingValue = "JDBC", matchIfMissing = true)
+    @ConditionalOnMissingBean(value = Fetcher.class)
     public class JDBCFetcherConfiguration {
 
         @Bean
+        @ConditionalOnProperty(prefix = "toggle.fetcher", name = "type", havingValue = "JDBC", matchIfMissing = true)
         public Fetcher jdbcFetcher(DataSource dataSource) {
             return new JDBCFetcher(dataSource);
         }
