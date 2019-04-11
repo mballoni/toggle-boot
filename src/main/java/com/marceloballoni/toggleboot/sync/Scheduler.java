@@ -20,7 +20,7 @@ public class Scheduler {
 
 
     @Transactional
-    @Scheduled(fixedDelayString = "${toggle.fetcher.frequency:5000}")
+    @Scheduled(fixedDelayString = "${toggle-boot.synchronizer.frequency:5000}")
     public void execute() {
         List<Toggle> toggles = fetcher.fetchAll();
         store.save(toggles);

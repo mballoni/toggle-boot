@@ -30,7 +30,7 @@ public class ToggleBootAutoConfiguration {
 
     @Configuration
     @EnableScheduling
-    @ConditionalOnProperty(prefix = "toggle-boot.auto-synchronize", name = "enabled", havingValue = "true", matchIfMissing = false)
+    @ConditionalOnProperty(prefix = "toggle-boot.synchronizer", name = "enabled", havingValue = "true", matchIfMissing = false)
     public class SchedulerAutoConfiguration {
 
         @Bean
