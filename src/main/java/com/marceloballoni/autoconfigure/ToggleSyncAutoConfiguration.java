@@ -15,7 +15,6 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import javax.sql.DataSource;
 
 @Configuration
-@EnableScheduling
 public class ToggleSyncAutoConfiguration {
 
     @Configuration
@@ -26,7 +25,17 @@ public class ToggleSyncAutoConfiguration {
         public Fetcher jdbcFetcher(DataSource dataSource) {
             return new JDBCFetcher(dataSource);
         }
+    }
 
+    @Configuration
+    @EnableScheduling
+    @ConditionalOnProperty(prefix = "toggle.auto-synchronize", name = "enabled", havingValue = "true", matchIfMissing = false)
+    public class SchedulerAutoConfiguration {
+
+        @Bean
+        public Scheduler getScheduler(Fetcher fetcher, Store store) {
+            return new Scheduler(fetcher, store);
+        }
     }
 
     @Bean
@@ -35,10 +44,6 @@ public class ToggleSyncAutoConfiguration {
         return new InMemoryStore();
     }
 
-    @Bean
-    public Scheduler getScheduler(Fetcher fetcher, Store store) {
-        return new Scheduler(fetcher, store);
-    }
 
     @Bean
     public ToggleService getToggleService(Store store) {
