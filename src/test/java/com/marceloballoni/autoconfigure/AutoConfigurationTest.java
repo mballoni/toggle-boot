@@ -5,7 +5,7 @@ import com.marceloballoni.toggleboot.Store;
 import com.marceloballoni.toggleboot.ToggleService;
 import com.marceloballoni.toggleboot.impl.InMemoryStore;
 import com.marceloballoni.toggleboot.sync.Scheduler;
-import com.marceloballoni.toggleboot.sync.jdbc.JDBCFetcher;
+import com.marceloballoni.toggleboot.impl.JDBCFetcher;
 import com.marceloballoni.autoconfigure.beans.NoOpFetcher;
 import com.marceloballoni.autoconfigure.beans.NoOpStore;
 import org.junit.Test;

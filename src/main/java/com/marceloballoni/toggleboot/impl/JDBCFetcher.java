@@ -1,4 +1,4 @@
-package com.marceloballoni.toggleboot.sync.jdbc;
+package com.marceloballoni.toggleboot.impl;
 
 import com.marceloballoni.toggleboot.Fetcher;
 import com.marceloballoni.toggleboot.Toggle;
