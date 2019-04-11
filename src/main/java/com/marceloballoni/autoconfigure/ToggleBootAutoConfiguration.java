@@ -22,7 +22,7 @@ public class ToggleBootAutoConfiguration {
     public class JDBCFetcherConfiguration {
 
         @Bean
-        @ConditionalOnProperty(prefix = "toggle.fetcher", name = "type", havingValue = "JDBC", matchIfMissing = true)
+        @ConditionalOnProperty(prefix = "toggle-boot.fetcher", name = "type", havingValue = "JDBC", matchIfMissing = true)
         public Fetcher jdbcFetcher(DataSource dataSource) {
             return new JDBCFetcher(dataSource);
         }
@@ -30,7 +30,7 @@ public class ToggleBootAutoConfiguration {
 
     @Configuration
     @EnableScheduling
-    @ConditionalOnProperty(prefix = "toggle.auto-synchronize", name = "enabled", havingValue = "true", matchIfMissing = false)
+    @ConditionalOnProperty(prefix = "toggle-boot.auto-synchronize", name = "enabled", havingValue = "true", matchIfMissing = false)
     public class SchedulerAutoConfiguration {
 
         @Bean

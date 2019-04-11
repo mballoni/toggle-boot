@@ -42,7 +42,7 @@ public class AutoConfigurationTest {
     @Test
     public void setup_SCHEDULER() {
         contextRunner.withUserConfiguration(UserStoreConfiguration.class)
-                .withPropertyValues("toggle.auto-synchronize.enabled=true")
+                .withPropertyValues("toggle-boot.auto-synchronize.enabled=true")
                 .run((context) -> {
                             assertThat(context).hasSingleBean(Scheduler.class);
                             assertThat(context).hasSingleBean(ScheduledAnnotationBeanPostProcessor.class);
