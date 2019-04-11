@@ -1,6 +1,4 @@
-package com.marceloballoni.toggle.sync;
-
-import com.marceloballoni.toggle.Toggle;
+package com.marceloballoni.toggle;
 
 import java.util.List;
 

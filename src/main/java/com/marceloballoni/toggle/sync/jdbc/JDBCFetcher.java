@@ -1,7 +1,7 @@
 package com.marceloballoni.toggle.sync.jdbc;
 
+import com.marceloballoni.toggle.Fetcher;
 import com.marceloballoni.toggle.Toggle;
-import com.marceloballoni.toggle.sync.Fetcher;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;

@@ -1,5 +1,6 @@
 package com.marceloballoni.toggle.sync;
 
+import com.marceloballoni.toggle.Fetcher;
 import com.marceloballoni.toggle.Store;
 import com.marceloballoni.toggle.Toggle;
 import org.springframework.scheduling.annotation.Scheduled;

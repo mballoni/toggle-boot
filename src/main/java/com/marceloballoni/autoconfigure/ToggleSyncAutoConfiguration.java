@@ -1,10 +1,12 @@
 package com.marceloballoni.autoconfigure;
 
+import com.marceloballoni.toggle.Fetcher;
 import com.marceloballoni.toggle.Store;
 import com.marceloballoni.toggle.ToggleService;
-import com.marceloballoni.toggle.sync.Fetcher;
-import com.marceloballoni.toggle.sync.jdbc.JDBCFetcher;
+import com.marceloballoni.toggle.impl.InMemoryStore;
 import com.marceloballoni.toggle.sync.Scheduler;
+import com.marceloballoni.toggle.sync.jdbc.JDBCFetcher;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -28,8 +30,9 @@ public class ToggleSyncAutoConfiguration {
     }
 
     @Bean
+    @ConditionalOnMissingBean(value = Store.class)
     public Store getStore() {
-        return new Store();
+        return new InMemoryStore();
     }
 
     @Bean
