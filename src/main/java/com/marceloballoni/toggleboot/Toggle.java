@@ -1,4 +1,4 @@
-package com.marceloballoni.toggle;
+package com.marceloballoni.toggleboot;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

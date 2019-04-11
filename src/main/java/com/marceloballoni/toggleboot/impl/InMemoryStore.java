@@ -1,7 +1,7 @@
-package com.marceloballoni.toggle.impl;
+package com.marceloballoni.toggleboot.impl;
 
-import com.marceloballoni.toggle.Store;
-import com.marceloballoni.toggle.Toggle;
+import com.marceloballoni.toggleboot.Store;
+import com.marceloballoni.toggleboot.Toggle;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.List;

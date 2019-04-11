@@ -1,11 +1,11 @@
 package com.marceloballoni.autoconfigure;
 
-import com.marceloballoni.toggle.Fetcher;
-import com.marceloballoni.toggle.Store;
-import com.marceloballoni.toggle.ToggleService;
-import com.marceloballoni.toggle.impl.InMemoryStore;
-import com.marceloballoni.toggle.sync.Scheduler;
-import com.marceloballoni.toggle.sync.jdbc.JDBCFetcher;
+import com.marceloballoni.toggleboot.Fetcher;
+import com.marceloballoni.toggleboot.Store;
+import com.marceloballoni.toggleboot.ToggleService;
+import com.marceloballoni.toggleboot.impl.InMemoryStore;
+import com.marceloballoni.toggleboot.sync.Scheduler;
+import com.marceloballoni.toggleboot.sync.jdbc.JDBCFetcher;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -15,7 +15,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import javax.sql.DataSource;
 
 @Configuration
-public class ToggleSyncAutoConfiguration {
+public class ToggleBootAutoConfiguration {
 
     @Configuration
     @ConditionalOnMissingBean(value = Fetcher.class)

@@ -1,11 +1,11 @@
 package com.marceloballoni.autoconfigure;
 
-import com.marceloballoni.toggle.Fetcher;
-import com.marceloballoni.toggle.Store;
-import com.marceloballoni.toggle.ToggleService;
-import com.marceloballoni.toggle.impl.InMemoryStore;
-import com.marceloballoni.toggle.sync.Scheduler;
-import com.marceloballoni.toggle.sync.jdbc.JDBCFetcher;
+import com.marceloballoni.toggleboot.Fetcher;
+import com.marceloballoni.toggleboot.Store;
+import com.marceloballoni.toggleboot.ToggleService;
+import com.marceloballoni.toggleboot.impl.InMemoryStore;
+import com.marceloballoni.toggleboot.sync.Scheduler;
+import com.marceloballoni.toggleboot.sync.jdbc.JDBCFetcher;
 import com.marceloballoni.autoconfigure.beans.NoOpFetcher;
 import com.marceloballoni.autoconfigure.beans.NoOpStore;
 import org.junit.Test;
@@ -21,7 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AutoConfigurationTest {
 
     private final ApplicationContextRunner contextRunner = new ApplicationContextRunner()
-            .withConfiguration(AutoConfigurations.of(ToggleSyncAutoConfiguration.class));
+            .withConfiguration(AutoConfigurations.of(ToggleBootAutoConfiguration.class));
 
     @Test
     public void setup_DEFAULT_beans() {

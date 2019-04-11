@@ -1,8 +1,8 @@
-package com.marceloballoni.toggle.sync;
+package com.marceloballoni.toggleboot.sync;
 
-import com.marceloballoni.toggle.Fetcher;
-import com.marceloballoni.toggle.Store;
-import com.marceloballoni.toggle.Toggle;
+import com.marceloballoni.toggleboot.Fetcher;
+import com.marceloballoni.toggleboot.Store;
+import com.marceloballoni.toggleboot.Toggle;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.transaction.annotation.Transactional;
 

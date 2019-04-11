@@ -1,4 +1,4 @@
-package com.marceloballoni.toggle.exception;
+package com.marceloballoni.toggleboot.exception;
 
 public class ToggleUnavailableException extends Exception {
     public ToggleUnavailableException(String message) {

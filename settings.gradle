@@ -3,4 +3,4 @@ pluginManagement {
 		gradlePluginPortal()
 	}
 }
-rootProject.name = 'toggle-sync'
+rootProject.name = 'toggle-boot'
