@@ -1,7 +1,7 @@
-package com.marceloballoni.toggleboot.impl;
+package br.com.mballoni.toggleboot.impl;
 
-import com.marceloballoni.toggleboot.Fetcher;
-import com.marceloballoni.toggleboot.Toggle;
+import br.com.mballoni.toggleboot.Fetcher;
+import br.com.mballoni.toggleboot.Toggle;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;

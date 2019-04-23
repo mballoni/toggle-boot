@@ -6,7 +6,7 @@ plugins {
 apply plugin: "maven"
 apply plugin: 'maven-publish'
 
-group = 'com.marceloballoni'
+group = 'br.com.mballoni'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 

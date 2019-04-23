@@ -1,6 +1,6 @@
-package com.marceloballoni.toggleboot.impl;
+package br.com.mballoni.toggleboot.impl;
 
-import com.marceloballoni.toggleboot.Toggle;
+import br.com.mballoni.toggleboot.Toggle;
 import org.junit.Test;
 
 import java.util.List;

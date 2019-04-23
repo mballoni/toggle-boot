@@ -1,13 +1,13 @@
-package com.marceloballoni.autoconfigure;
+package br.com.mballoni.autoconfigure;
 
-import com.marceloballoni.toggleboot.Fetcher;
-import com.marceloballoni.toggleboot.Store;
-import com.marceloballoni.toggleboot.ToggleService;
-import com.marceloballoni.toggleboot.impl.InMemoryStore;
-import com.marceloballoni.toggleboot.sync.Scheduler;
-import com.marceloballoni.toggleboot.impl.JDBCFetcher;
-import com.marceloballoni.autoconfigure.beans.NoOpFetcher;
-import com.marceloballoni.autoconfigure.beans.NoOpStore;
+import br.com.mballoni.autoconfigure.beans.NoOpFetcher;
+import br.com.mballoni.autoconfigure.beans.NoOpStore;
+import br.com.mballoni.toggleboot.Fetcher;
+import br.com.mballoni.toggleboot.Store;
+import br.com.mballoni.toggleboot.ToggleService;
+import br.com.mballoni.toggleboot.impl.InMemoryStore;
+import br.com.mballoni.toggleboot.impl.JDBCFetcher;
+import br.com.mballoni.toggleboot.sync.Scheduler;
 import org.junit.Test;
 import org.springframework.boot.autoconfigure.AutoConfigurations;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureJdbc;
@@ -28,10 +28,12 @@ public class AutoConfigurationTest {
         contextRunner.withUserConfiguration(JDBCConfiguration.class)
                 .run((context) -> {
                             assertThat(context).hasSingleBean(JDBCFetcher.class);
+                            assertThat(context).hasSingleBean(Fetcher.class);
 
                             assertThat(context).hasSingleBean(ToggleService.class);
 
                             assertThat(context).hasSingleBean(InMemoryStore.class);
+                            assertThat(context).hasSingleBean(Store.class);
 
                             assertThat(context).doesNotHaveBean(Scheduler.class);
                             assertThat(context).doesNotHaveBean(ScheduledAnnotationBeanPostProcessor.class);
@@ -56,8 +58,10 @@ public class AutoConfigurationTest {
                 .run((context) -> {
 
                     assertThat(context).hasSingleBean(NoOpFetcher.class);
+                    assertThat(context).hasSingleBean(Fetcher.class);
 
                     assertThat(context).hasSingleBean(NoOpStore.class);
+                    assertThat(context).hasSingleBean(Store.class);
 
                 });
     }

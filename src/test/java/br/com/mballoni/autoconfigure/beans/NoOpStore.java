@@ -1,7 +1,7 @@
-package com.marceloballoni.autoconfigure.beans;
+package br.com.mballoni.autoconfigure.beans;
 
-import com.marceloballoni.toggleboot.Store;
-import com.marceloballoni.toggleboot.Toggle;
+import br.com.mballoni.toggleboot.Store;
+import br.com.mballoni.toggleboot.Toggle;
 
 import java.util.List;
 import java.util.Optional;

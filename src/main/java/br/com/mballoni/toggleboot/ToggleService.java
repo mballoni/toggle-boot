@@ -1,6 +1,6 @@
-package com.marceloballoni.toggleboot;
+package br.com.mballoni.toggleboot;
 
-import com.marceloballoni.toggleboot.exception.ToggleUnavailableException;
+import br.com.mballoni.toggleboot.exception.ToggleUnavailableException;
 
 import static java.lang.String.format;
 
