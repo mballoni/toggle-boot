@@ -1,6 +1,7 @@
 plugins {
 	id 'java'
 	id "io.spring.dependency-management" version "1.0.7.RELEASE"
+	id "org.sonarqube" version "2.7"
 }
 
 apply plugin: "maven"
@@ -45,5 +46,12 @@ dependencies {
 dependencyManagement {
 	imports {
 		mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+	}
+}
+
+sonarqube {
+	properties {
+		property "sonar.sourceEncoding", "UTF-8"
+		property "sonar.projectName", "Toggle Boot"
 	}
 }
