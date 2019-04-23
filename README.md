@@ -1,1 +1,7 @@
 [![Build Status](https://travis-ci.com/mballoni/toggle-boot.svg?branch=master)](https://travis-ci.com/mballoni/toggle-boot)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=br.com.mballoni%3Atoggle-boot&metric=alert_status)](https://sonarcloud.io/dashboard?id=br.com.mballoni%3Atoggle-boot)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=br.com.mballoni%3Atoggle-boot&metric=bugs)](https://sonarcloud.io/dashboard?id=br.com.mballoni%3Atoggle-boot)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=br.com.mballoni%3Atoggle-boot&metric=code_smells)](https://sonarcloud.io/dashboard?id=br.com.mballoni%3Atoggle-boot)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=br.com.mballoni%3Atoggle-boot&metric=coverage)](https://sonarcloud.io/dashboard?id=br.com.mballoni%3Atoggle-boot)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=br.com.mballoni%3Atoggle-boot&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=br.com.mballoni%3Atoggle-boot)
+[![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=br.com.mballoni%3Atoggle-boot&metric=sqale_index)](https://sonarcloud.io/dashboard?id=br.com.mballoni%3Atoggle-boot)
