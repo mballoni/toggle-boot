@@ -4,11 +4,13 @@ jdk:
   - oraclejdk11
 jobs:
   include:
-    - stage: build
+    - stage: Build
       script: ./gradlew compileJava
-    - stage: unit-test
+    - stage: Unit Test
       script: ./gradlew test
-    - stage: static-analysis
+    - stage: Dependency Check
+      script: ./gradlew dependencyCheckAnalyze
+    - stage: Static Analysis
       script: ./gradlew sonarqube
 
 before_cache:

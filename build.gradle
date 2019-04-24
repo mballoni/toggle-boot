@@ -1,8 +1,9 @@
 plugins {
-	id 'java'
-	id "io.spring.dependency-management" version "1.0.7.RELEASE"
-	id "org.sonarqube" version "2.7"
-	id "jacoco"
+    id 'java'
+    id "io.spring.dependency-management" version "1.0.7.RELEASE"
+    id "org.sonarqube" version "2.7"
+    id "jacoco"
+    id "org.owasp.dependencycheck" version "4.0.2"
 }
 
 apply plugin: "maven"
@@ -13,52 +14,52 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
 }
 
 repositories {
-	mavenCentral()
-	mavenLocal()
+    mavenCentral()
+    mavenLocal()
 }
 
 ext {
-	set('springBootVersion', '2.1.4.RELEASE')
+    set('springBootVersion', '2.1.4.RELEASE')
 }
 
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	compileOnly 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter'
+    compileOnly 'org.springframework.boot:spring-boot-starter-jdbc'
 
-	annotationProcessor "org.springframework.boot:spring-boot-autoconfigure-processor"
+    annotationProcessor "org.springframework.boot:spring-boot-autoconfigure-processor"
 
-	compileOnly 'org.projectlombok:lombok'
-	testCompileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	testAnnotationProcessor 'org.projectlombok:lombok'
+    compileOnly 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	testImplementation 'org.hsqldb:hsqldb'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    testImplementation 'org.hsqldb:hsqldb'
 }
 
 dependencyManagement {
-	imports {
-		mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
-	}
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
 }
 
 sonarqube {
-	properties {
-		property "sonar.sourceEncoding", "UTF-8"
-		property "sonar.projectName", "Toggle Boot"
-	}
+    properties {
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.projectName", "Toggle Boot"
+    }
 }
 
 jacocoTestReport {
-	reports {
-		xml.enabled true
-	}
+    reports {
+        xml.enabled true
+    }
 }
