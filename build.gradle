@@ -9,57 +9,49 @@ plugins {
 apply plugin: "maven"
 apply plugin: 'maven-publish'
 
-group = 'br.com.mballoni'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
-
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
 }
 
-repositories {
-    mavenCentral()
-    mavenLocal()
-}
 
-ext {
-    set('springBootVersion', '2.1.4.RELEASE')
-}
+allprojects {
+    apply plugin: "io.spring.dependency-management"
+    apply plugin: "org.sonarqube"
+    apply plugin: "jacoco"
+    apply plugin: "org.owasp.dependencycheck"
 
+    group = 'br.com.mballoni'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '1.8'
 
-dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
-    compileOnly 'org.springframework.boot:spring-boot-starter-jdbc'
-
-    annotationProcessor "org.springframework.boot:spring-boot-autoconfigure-processor"
-
-    compileOnly 'org.projectlombok:lombok'
-    testCompileOnly 'org.projectlombok:lombok'
-    annotationProcessor 'org.projectlombok:lombok'
-    testAnnotationProcessor 'org.projectlombok:lombok'
-
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.springframework.boot:spring-boot-starter-jdbc'
-    testImplementation 'org.hsqldb:hsqldb'
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    ext {
+        set('springBootVersion', '2.1.4.RELEASE')
+        set('applicationVersion', version)
     }
-}
 
-sonarqube {
-    properties {
-        property "sonar.sourceEncoding", "UTF-8"
-        property "sonar.projectName", "Toggle Boot"
+    repositories {
+        mavenCentral()
+        mavenLocal()
     }
-}
 
-jacocoTestReport {
-    reports {
-        xml.enabled true
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+        }
+    }
+
+    sonarqube {
+        properties {
+            property "sonar.sourceEncoding", "UTF-8"
+            property "sonar.projectName", "Toggle Boot"
+        }
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.enabled true
+        }
     }
 }
