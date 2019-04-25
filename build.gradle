@@ -6,25 +6,26 @@ plugins {
     id "org.owasp.dependencycheck" version "4.0.2"
 }
 
-apply plugin: "maven"
-apply plugin: 'maven-publish'
-
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
     }
 }
 
-
 allprojects {
+    group = 'br.com.mballoni'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = '1.8'
+}
+
+subprojects {
+    apply plugin: "java"
     apply plugin: "io.spring.dependency-management"
     apply plugin: "org.sonarqube"
     apply plugin: "jacoco"
     apply plugin: "org.owasp.dependencycheck"
-
-    group = 'br.com.mballoni'
-    version = '0.0.1-SNAPSHOT'
-    sourceCompatibility = '1.8'
+    apply plugin: "maven"
+    apply plugin: 'maven-publish'
 
     ext {
         set('springBootVersion', '2.1.4.RELEASE')
