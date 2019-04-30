@@ -5,3 +5,4 @@ pluginManagement {
 }
 rootProject.name = 'toggle-boot'
 include 'toggle-boot-core'
+include 'toggle-boot-example'
