@@ -18,3 +18,14 @@ dependencies {
 }
 
 jar.enabled = false
+bootJar.enabled = false
+
+sonarqube {
+    skipProject = true
+}
+
+test {
+    jacoco {
+        enabled = false
+    }
+}
