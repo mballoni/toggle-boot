@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id "io.spring.dependency-management" version "1.0.8.RELEASE" apply false
-    id "org.sonarqube" version "2.7" apply false
+    id "org.sonarqube" version "2.7.1" apply false
     id "jacoco"
     id "org.owasp.dependencycheck" version "4.0.2" apply false
     id 'org.springframework.boot' version '2.1.6.RELEASE' apply false
