@@ -15,8 +15,12 @@ configurations {
 
 allprojects {
     group = 'br.com.mballoni'
-    version = '0.0.1-' + 'git rev-parse --short HEAD'.execute().getText().trim() + '-SNAPSHOT'
+    version = "0.0.1- ${hashNumber()}-SNAPSHOT"
     sourceCompatibility = '1.8'
+}
+
+static def hashNumber() {
+    'git rev-parse --short HEAD'.execute().getText().trim()
 }
 
 subprojects {
