@@ -33,7 +33,7 @@ subprojects {
     apply plugin: 'maven-publish'
 
     ext {
-        set('springBootVersion', '2.2.6.RELEASE')
+        set('springBootVersion', '2.2.7.RELEASE')
     }
 
     repositories {
